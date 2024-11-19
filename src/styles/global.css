@@ -1,0 +1,40 @@
+:root {
+  --primary-color: rgb(249, 82, 11);
+  --primary-hover: rgb(225, 74, 10);
+}
+
+.ant-btn-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+.ant-menu-item-selected {
+  color: var(--primary-color) !important;
+}
+
+.ant-menu-item:hover {
+  color: var(--primary-color) !important;
+}
+
+.ant-menu-item-selected::after {
+  border-bottom-color: var(--primary-color) !important;
+}
+
+/* Carousel Styles */
+.ant-carousel .slick-dots li button {
+  background: #f9520b !important;
+  opacity: 0.4;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  opacity: 1;
+  background: #f9520b !important;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  overflow: hidden;
+} 
