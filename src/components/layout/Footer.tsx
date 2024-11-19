@@ -1,66 +1,86 @@
 import React from 'react';
-import { Layout, Row, Col, Typography, Input, Button } from 'antd';
-import { FacebookOutlined, TwitterOutlined, InstagramOutlined, LinkedinOutlined } from '@ant-design/icons';
+import { Layout, Row, Col, Typography, Space } from 'antd';
+import { 
+  FacebookOutlined, 
+  TwitterOutlined, 
+  InstagramOutlined, 
+  LinkedinOutlined,
+  PhoneOutlined,
+  MailOutlined,
+  EnvironmentOutlined,
+  WhatsAppOutlined
+} from '@ant-design/icons';
 
 const { Footer: AntFooter } = Layout;
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const Footer: React.FC = () => {
   return (
     <AntFooter className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6">
         <Row gutter={[48, 32]}>
-          {/* About Company */}
+          {/* Company Logo and Info */}
           <Col xs={24} md={8}>
-            <Title level={3} className="text-white">OXO Packaging</Title>
+            <div className="mb-6">
+              <img src="/ap-footer-logo.png" alt="AL-Aziz Packages" className="h-12" />
+            </div>
             <Paragraph className="text-gray-400">
-              Leading manufacturer of custom boxes and packaging solutions. 
-              We provide high-quality custom boxes with logo at wholesale rates.
+              AL-Aziz Packages is a leading manufacturer of custom packaging solutions. 
+              We specialize in creating high-quality, innovative packaging that helps 
+              your products stand out in the market.
             </Paragraph>
           </Col>
 
           {/* Quick Links */}
           <Col xs={24} md={8}>
-            <Title level={3} className="text-white">Quick Links</Title>
-            <ul className="space-y-2 text-gray-400">
-              <li>Custom Boxes</li>
-              <li>Retail Packaging</li>
-              <li>Food Packaging</li>
-              <li>Cosmetic Boxes</li>
-            </ul>
+            <Title level={4} className="text-white mb-6">Quick Links</Title>
+            <Space direction="vertical" className="text-gray-400">
+              <Text className="text-gray-400 hover:text-primary cursor-pointer">Home</Text>
+              <Text className="text-gray-400 hover:text-primary cursor-pointer">About Us</Text>
+              <Text className="text-gray-400 hover:text-primary cursor-pointer">Products</Text>
+              <Text className="text-gray-400 hover:text-primary cursor-pointer">Contact</Text>
+            </Space>
           </Col>
 
-          {/* Newsletter */}
+          {/* Contact Information */}
           <Col xs={24} md={8}>
-            <Title level={3} className="text-white">Newsletter</Title>
-            <Paragraph className="text-gray-400">
-              Subscribe to our newsletter for updates and exclusive offers
-            </Paragraph>
-            <Input.Group compact>
-              <Input 
-                style={{ width: 'calc(100% - 100px)' }} 
-                placeholder="Your email" 
-              />
-              <Button type="primary">Subscribe</Button>
-            </Input.Group>
+            <Title level={4} className="text-white mb-6">Contact Us</Title>
+            <Space direction="vertical" size="large" className="text-gray-400">
+              <div className="flex items-center">
+                <EnvironmentOutlined className="text-primary mr-3 text-lg" />
+                <span>123 Business Street, City, Country</span>
+              </div>
+              <div className="flex items-center">
+                <PhoneOutlined className="text-primary mr-3 text-lg" />
+                <span>+1 (123) 456-7890</span>
+              </div>
+              <div className="flex items-center">
+                <WhatsAppOutlined className="text-primary mr-3 text-lg" />
+                <span>+1 (123) 456-7890</span>
+              </div>
+              <div className="flex items-center">
+                <MailOutlined className="text-primary mr-3 text-lg" />
+                <span>info@alazizpackages.com</span>
+              </div>
+            </Space>
           </Col>
         </Row>
 
-        {/* Social Links */}
+        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <Row justify="space-between" align="middle">
             <Col>
-              <p className="text-gray-400">
-                © {new Date().getFullYear()} OXO Packaging. All rights reserved.
-              </p>
+              <Text className="text-gray-400">
+                © {new Date().getFullYear()} AL-Aziz Packages. All rights reserved.
+              </Text>
             </Col>
             <Col>
-              <div className="flex space-x-6 text-gray-400">
-                <FacebookOutlined className="text-xl hover:text-blue-600 cursor-pointer" />
-                <TwitterOutlined className="text-xl hover:text-blue-400 cursor-pointer" />
-                <InstagramOutlined className="text-xl hover:text-pink-600 cursor-pointer" />
-                <LinkedinOutlined className="text-xl hover:text-blue-500 cursor-pointer" />
-              </div>
+              <Space size="large" className="text-gray-400">
+                <FacebookOutlined className="text-xl hover:text-primary cursor-pointer" />
+                <TwitterOutlined className="text-xl hover:text-primary cursor-pointer" />
+                <InstagramOutlined className="text-xl hover:text-primary cursor-pointer" />
+                <LinkedinOutlined className="text-xl hover:text-primary cursor-pointer" />
+              </Space>
             </Col>
           </Row>
         </div>

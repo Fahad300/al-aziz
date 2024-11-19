@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Button } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
-import { PhoneOutlined, MailOutlined } from '@ant-design/icons';
+import { PhoneOutlined, MailOutlined, WhatsAppOutlined } from '@ant-design/icons';
 const { Header: AntHeader } = Layout;
 
 const Header: React.FC = () => {
@@ -26,11 +26,12 @@ const Header: React.FC = () => {
             </span>
             <span className="flex items-center">
               <MailOutlined className="mr-2" />
-              info@oxopackaging.com
+              info@alazizpackages.com
             </span>
           </div>
-          <Button type="primary" ghost>
-            Get Custom Quote
+          <Button type="default" className="bg-green-500 hover:bg-green-600 text-white border-none">
+            <WhatsAppOutlined />
+            Whatsapp
           </Button>
         </div>
       </div>

@@ -13,10 +13,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <Layout className="min-h-screen">
       <Header />
-      <Content className="p-6">
-        <div className="max-w-7xl mx-auto">
-          {children}
-        </div>
+      <Content>
+        {children}
       </Content>
       <Footer />
     </Layout>
