@@ -23,7 +23,7 @@ function Navbar({ navLinks, cta }) {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <a className={styles.brand} href="#home" aria-label="Al Aziz Packages home">
-          <img width={220} src="/images/logo-aziz.png" alt="Azizlogo" />
+          <img src="/images/logo-aziz.png" alt="Azizlogo" />
         </a>
 
         <button

@@ -26,6 +26,10 @@ function ClientsSection({ clients }) {
             spaceBetween={20}
             speed={600}
             breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
               640: {
                 slidesPerView: 4,
                 spaceBetween: 15,

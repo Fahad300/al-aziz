@@ -292,6 +292,11 @@
 
   .stats {
     grid-template-columns: 1fr;
+    display: none;
+  }
+
+  .visual {
+    display: none;
   }
 
   .cardImage {

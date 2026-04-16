@@ -26,6 +26,10 @@
   color: var(--color-white);
 }
 
+.brand img {
+  width: 220px;
+}
+
 .brand strong,
 .brand small {
   display: block;
@@ -83,12 +87,16 @@
   width: 1.45rem;
   height: 2px;
   margin: 0.25rem 0;
-  background: var(--color-white);
+  background: var(--color-accent);
 }
 
 @media (max-width: 900px) {
   .toggle {
     display: block;
+  }
+
+  .brand img {
+    width: 150px;
   }
 
   .nav {
@@ -112,6 +120,7 @@
 
   .nav a {
     padding: 0.75rem 0;
+    color: var(--color-white);
   }
 
   .open {
