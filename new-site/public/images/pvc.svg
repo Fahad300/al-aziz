@@ -1,0 +1,14 @@
+<svg width="254" height="112" viewBox="0 0 254 112" xmlns="http://www.w3.org/2000/svg">
+  <rect width="254" height="112" rx="12" fill="#1F3D2B"></rect>
+  
+  <!-- Leaf Icon -->
+  <path d="M40 56C40 40 60 32 70 36C66 52 54 68 40 76C38 68 40 62 40 56Z" fill="#C8A96A"></path>
+  
+  <!-- Text -->
+  <text x="90" y="52" fill="#FFFFFF" font-size="20" font-family="Inter, Arial" font-weight="600">
+    PVC-FREE
+  </text>
+  <text x="90" y="78" fill="#FFFFFF" font-size="14" font-family="Inter, Arial" font-weight="400">
+    CERTIFIED
+  </text>
+</svg>

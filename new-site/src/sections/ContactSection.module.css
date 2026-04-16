@@ -1,0 +1,182 @@
+.section {
+  padding: 96px 0;
+  background: var(--color-background-alt);
+}
+
+.teamWrap {
+  margin-top: 48px;
+}
+
+.ceoRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
+}
+
+.featured {
+  max-width: 420px;
+  width: 100%;
+}
+
+.cardVisual {
+  position: relative;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.avatar {
+  position: relative;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000;
+  background: linear-gradient(135deg, #8b5cf6 0%, #9938ca 55%, #e0724a 100%);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+}
+
+.photo {
+  position: relative;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 999px;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.25);
+}
+
+.overlay {
+  position: absolute;
+  inset: auto 0 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+}
+
+.cardBody {
+  padding: 22px 20px 24px;
+}
+
+.name {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.role {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #e0724a;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #000;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.meta p {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.primaryBtn {
+  background: green;
+  color: #fff;
+}
+
+.primaryBtn:hover {
+  opacity: 0.92;
+}
+
+.secondaryBtn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  background: #e0724a
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.addressCard {
+  margin-top: 40px;
+  padding: 28px;
+  border-radius: 24px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(22, 22, 34, 0.06);
+}
+
+.addressLabel {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #7c6ea1;
+  font-weight: 700;
+}
+
+.addressText {
+  margin: 0;
+  color: #1b1b25;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@media (max-width: 991px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    max-width: 100%;
+  }
+}

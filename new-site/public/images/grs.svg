@@ -1,0 +1,18 @@
+<svg width="254" height="112" viewBox="0 0 254 112" xmlns="http://www.w3.org/2000/svg">
+  <rect width="254" height="112" rx="12" fill="#1F3D2B"></rect>
+  
+  <!-- Recycle Icon -->
+  <g fill="#C8A96A">
+    <path d="M48 40 L60 34 L72 40 L66 42 L60 38 L54 42 Z"></path>
+    <path d="M72 40 L78 54 L72 68 L70 62 L74 54 L70 46 Z"></path>
+    <path d="M72 68 L60 74 L48 68 L54 66 L60 70 L66 66 Z"></path>
+  </g>
+  
+  <!-- Text -->
+  <text x="90" y="52" fill="#FFFFFF" font-size="18" font-family="Inter, Arial" font-weight="600">
+    GRS &amp; RCS
+  </text>
+  <text x="90" y="78" fill="#FFFFFF" font-size="14" font-family="Inter, Arial" font-weight="400">
+    CERTIFIED
+  </text>
+</svg>

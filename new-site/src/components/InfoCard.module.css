@@ -1,0 +1,36 @@
+.card {
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid rgba(7, 30, 56, 0.12);
+  background: var(--color-white);
+  box-shadow: 0 10px 30px rgba(7, 30, 56, 0.06);
+}
+
+.accent {
+  margin: 0 0 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.card ul {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  color: var(--color-muted);
+}
+
+.card li + li {
+  margin-top: 0.45rem;
+}

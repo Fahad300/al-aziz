@@ -1,0 +1,43 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 1.4rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.primary:hover,
+.primary:focus-visible {
+  background: var(--color-accent-strong);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}

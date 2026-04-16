@@ -1,0 +1,51 @@
+.headerContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.logoContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoSwiper {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.logoSwiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.logoCard {
+  display: grid;
+  place-items: center;
+  min-height: 5rem;
+  padding: 0.5rem;
+  background: var(--color-white);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(7, 30, 56, 0.15);
+}
+
+.logoCard img {
+  max-width: 100%;
+  height: 7rem;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.logoCard:hover img {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

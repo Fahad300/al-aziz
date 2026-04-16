@@ -1,0 +1,66 @@
+:root {
+  --color-primary: #071e38;
+  --color-primary-soft: #0f3b63;
+  --color-accent: #f3c13a;
+  --color-accent-strong: #b88910;
+  --color-background: #f6f7f9;
+  --color-background-alt: #eef2f6;
+  --color-surface: #ffffff;
+  --color-text: #101820;
+  --color-muted: #526171;
+  --color-white: #ffffff;
+  --container-width: 1200px;
+  --section-padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding: var(--section-padding);
+}
+
+.sectionAlt {
+  background: var(--color-background-alt);
+}
+
+main {
+  overflow: clip;
+}

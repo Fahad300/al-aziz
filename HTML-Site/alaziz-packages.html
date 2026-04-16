@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Aziz Packages – Flexible Packaging & Printing</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0d2240;
+      --navy2: #0a1a33;
+      --gold: #f5a800;
+      --gold2: #e09700;
+      --light: #f4f6f9;
+      --white: #ffffff;
+      --gray: #8a9bb0;
+      --text: #1c2e45;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HEXAGON UTILITY ── */
+    .hex-clip {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent;
+      transition: background .4s, box-shadow .4s;
+      padding: 18px 0;
+    }
+
+    #navbar.scrolled {
+      background: var(--navy2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, .35);
+      padding: 10px 0;
+    }
+
+    .navbar-brand img {
+      height: 42px;
+    }
+
+    .navbar-brand span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-left: 6px;
+    }
+
+    .navbar-brand em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .8) !important;
+      margin: 0 6px;
+      transition: color .25s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold) !important;
+    }
+
+    .navbar-toggler {
+      border-color: var(--gold);
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy2) 0%, #173563 55%, #0d2240 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-hex-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-hex-bg span {
+      position: absolute;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: var(--gold);
+      opacity: .06;
+      border-radius: 4px;
+    }
+
+    .hero-hex-bg span:nth-child(1) {
+      width: 500px;
+      height: 500px;
+      top: -120px;
+      right: -100px;
+      opacity: .08;
+    }
+
+    .hero-hex-bg span:nth-child(2) {
+      width: 320px;
+      height: 320px;
+      top: 60%;
+      left: -80px;
+      opacity: .05;
+    }
+
+    .hero-hex-bg span:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      top: 20%;
+      left: 40%;
+      opacity: .04;
+    }
+
+    .hero-hex-bg span:nth-child(4) {
+      width: 150px;
+      height: 150px;
+      bottom: 5%;
+      right: 20%;
+      opacity: .07;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      line-height: 1.0;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .hero-title em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .72);
+      max-width: 500px;
+      margin: 20px 0 36px;
+      line-height: 1.7;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy2);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 0;
+      transition: background .25s, transform .2s;
+      text-decoration: none;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold2);
+      transform: translateY(-2px);
+      color: var(--navy2);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 34px;
+      border: 2px solid var(--gold);
+      border-radius: 0;
+      transition: all .25s;
+      text-decoration: none;
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--navy2);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 56px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 32px;
+    }
+
+    .stat-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-top: 4px;
+    }
+
+    /* hero visual hex grid */
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 130px);
+      grid-template-rows: repeat(3, 130px);
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .hex-card {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px;
+      transition: transform .3s;
+      cursor: default;
+    }
+
+    .hex-card:hover {
+      transform: scale(1.06);
+    }
+
+    .hex-card i {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .hex-gold {
+      background: var(--gold);
+      color: var(--navy2);
+    }
+
+    .hex-navy {
+      background: var(--navy);
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, .12);
+    }
+
+    .hex-empty {
+      background: transparent;
+    }
+
+    .hex-card.offset {
+      margin-top: 65px;
+    }
+
+    /* ── SECTION GENERIC ── */
+    section {
+      padding: 96px 0;
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      color: var(--navy);
+      letter-spacing: 1.5px;
+    }
+
+    .section-title em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .section-title.white {
+      color: var(--white);
+    }
+
+    .section-divider {
+      width: 56px;
+      height: 4px;
+      background: var(--gold);
+      margin: 18px 0 28px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--light);
+    }
+
+    .about-img-wrap {
+      position: relative;
+      padding: 20px 20px 20px 0;
+    }
+
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 100%;
+      height: 100%;
+      background: var(--navy);
+      z-index: 0;
+    }
+
+    .about-img-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 420px;
+    }
+
+    .about-tag {
+      position: absolute;
+      bottom: 30px;
+      right: -10px;
+      z-index: 2;
+      background: var(--gold);
+      color: var(--navy2);
+      padding: 14px 22px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+    }
+
+    .about-feat {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .feat-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy2);
+      font-size: 1.1rem;
+    }
+
+    .feat-text h6 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .feat-text p {
+      font-size: .88rem;
+      color: #5a6b7d;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── VISION ── */
+    #vision {
+      background: var(--navy2);
+    }
+
+    .vision-card {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .09);
+      padding: 32px 28px;
+      position: relative;
+      transition: background .3s, border-color .3s;
+    }
+
+    .vision-card:hover {
+      background: rgba(245, 168, 0, .07);
+      border-color: var(--gold);
+    }
+
+    .vision-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: .18;
+      line-height: 1;
+      position: absolute;
+      top: 12px;
+      right: 20px;
+    }
+
+    .vision-card h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .vision-card p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--white);
+    }
+
+    .service-card {
+      border: 1px solid #e4e9f0;
+      padding: 36px 28px;
+      transition: border-color .3s, box-shadow .3s, transform .3s;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
+      transform: translateY(-4px);
+    }
+
+    .service-hex {
+      width: 60px;
+      height: 60px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      transition: background .3s;
+    }
+
+    .service-card:hover .service-hex {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .service-card h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: .88rem;
+      color: #5a6b7d;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── MATERIALS ── */
+    #materials {
+      background: var(--light);
+    }
+
+    .mat-card {
+      background: var(--white);
+      border-top: 4px solid var(--navy);
+      padding: 32px 28px;
+      height: 100%;
+      transition: border-color .3s, box-shadow .3s;
+    }
+
+    .mat-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .08);
+    }
+
+    .mat-card h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .mat-tag {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      margin-bottom: 16px;
+    }
+
+    .mat-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mat-card ul li {
+      font-size: .87rem;
+      color: #4a5e72;
+      padding: 7px 0;
+      border-bottom: 1px solid #edf0f4;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .mat-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .mat-card ul li::before {
+      content: '›';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── CLIENTS ── */
+    #clients {
+      background: var(--navy);
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .client-cell {
+      background: rgba(255, 255, 255, .03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      transition: background .3s;
+    }
+
+    .client-cell:hover {
+      background: rgba(245, 168, 0, .1);
+    }
+
+    .client-cell span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, .55);
+      text-align: center;
+      transition: color .3s;
+    }
+
+    .client-cell:hover span {
+      color: var(--gold);
+    }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications {
+      background: var(--light);
+    }
+
+    .cert-card {
+      background: var(--white);
+      border: 1px solid #e4e9f0;
+      padding: 36px 28px;
+      text-align: center;
+      height: 100%;
+      transition: box-shadow .3s, border-color .3s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .07);
+    }
+
+    .cert-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.6rem;
+    }
+
+    .cert-card h6 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .cert-card p {
+      font-size: .85rem;
+      color: #5a6b7d;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── TEAM / CONTACT ── */
+    #contact {
+      background: var(--navy2);
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-img-wrap {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-img-wrap i {
+      font-size: 3rem;
+      color: rgba(255, 255, 255, .25);
+    }
+
+    .team-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .team-contact a {
+      display: block;
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+      line-height: 1.8;
+      transition: color .2s;
+    }
+
+    .team-contact a:hover {
+      color: var(--gold);
+    }
+
+    .contact-block {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .1);
+      padding: 32px;
+    }
+
+    .contact-block h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .cinfo {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .cinfo i {
+      color: var(--gold);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cinfo span {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060f1e;
+      padding: 28px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .3);
+      margin: 0;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    /* ── SCROLL FADE-IN ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: .1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: .2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: .3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: .4s;
+    }
+
+    /* ── BACK TO TOP ── */
+    #back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      color: var(--navy2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    #back-top.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #back-top:hover {
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 991px) {
+      .hero-visual {
+        display: none;
+      }
+
+      .hero-stats {
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav id="navbar" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span><em>AL</em>AZIZ <em style="color:var(--white);opacity:.5;font-size:1rem">PACKAGES</em></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vision">Vision</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-hex-bg">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-content reveal">
+          <p class="hero-eyebrow">Established 2010 · Pakistan Flexographic Printing</p>
+          <h1 class="hero-title">Flexible<br>Packaging &amp;<br><em>Precision</em><br>Printing.</h1>
+          <p class="hero-sub">For All Kinds Of Flexible Packaging Material &amp; Printing. Your Trusted Partner in
+            Flexographic Printing and Industrial Packaging.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#services" class="btn-gold">Our Services</a>
+            <a href="#contact" class="btn-outline-gold">Get In Touch</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="stat-val">15+</div>
+              <div class="stat-label">Years Active</div>
+            </div>
+            <div>
+              <div class="stat-val">10+</div>
+              <div class="stat-label">Major Clients</div>
+            </div>
+            <div>
+              <div class="stat-val">3</div>
+              <div class="stat-label">Certifications</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-flex justify-content-center reveal">
+          <div class="hero-visual">
+            <!-- Row 1 -->
+            <div class="hex-card hex-gold"><i class="bi bi-box-seam"></i>HDPE</div>
+            <div class="hex-card hex-navy"><i class="bi bi-layers"></i>LDPE</div>
+            <div class="hex-card hex-gold"><i class="bi bi-film"></i>PP Film</div>
+            <!-- Row 2 (offset) -->
+            <div class="hex-card hex-navy offset"><i class="bi bi-printer"></i>Flexo Print</div>
+            <div class="hex-card hex-gold offset"><i class="bi bi-scissors"></i>Precision Cut</div>
+            <div class="hex-card hex-navy offset"><i class="bi bi-award"></i>Certified</div>
+            <!-- Row 3 -->
+            <div class="hex-card hex-gold"><i class="bi bi-recycle"></i>Eco Bags</div>
+            <div class="hex-card hex-navy"><i class="bi bi-gear"></i>In-House</div>
+            <div class="hex-card hex-empty"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal">
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80"
+              alt="Manufacturing facility" />
+            <div class="about-tag">Est. 2010</div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="reveal reveal-delay-1">
+            <p class="section-label">About Al Aziz Packages</p>
+            <h2 class="section-title">Established 2010 in<br><em>Flexible Packaging</em></h2>
+            <div class="section-divider"></div>
+            <p class="mb-3" style="color:#4a5e72;line-height:1.8;font-size:.97rem;">
+              Al Aziz Packages specializes in HDPE, LDPE, and PP film manufacturing and flexographic printing—backed by
+              a wholly-owned production facility for consistent, in-house quality control.
+            </p>
+            <div class="p-4" style="background:rgba(13,34,64,.04);border:1px solid rgba(13,34,64,.08);">
+              <p class="mb-2"
+                style="font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-size:.9rem;">
+                Mission
+              </p>
+              <p style="margin:0;color:#2a3f5a;line-height:1.8;font-size:.97rem;">
+                "To empower businesses through innovative, high-performance packaging and precision branding."
+              </p>
+            </div>
+          </div>
+          <div class="row g-3 mt-2">
+            <div class="col-md-6 reveal reveal-delay-2">
+              <div class="about-feat">
+                <div class="feat-icon"><i class="bi bi-scissors"></i></div>
+                <div class="feat-text">
+                  <h6>Precision Cutting &amp; Printing</h6>
+                  <p>Clean edges and sharp branding for every order—built on reliable flexographic printing and accurate
+                    production.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 reveal reveal-delay-3">
+              <div class="about-feat">
+                <div class="feat-icon"><i class="bi bi-shield-check"></i></div>
+                <div class="feat-text">
+                  <h6>Industrial-Grade Durability</h6>
+                  <p>Industrial-grade strength engineered for heavy-duty packaging and dependable performance through
+                    handling and transit.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 reveal reveal-delay-2">
+              <div class="about-feat">
+                <div class="feat-icon"><i class="bi bi-puzzle"></i></div>
+                <div class="feat-text">
+                  <h6>Custom Tailored Solutions</h6>
+                  <p>Custom sizes and production specifications tailored to your brand, product needs, and supply
+                    requirements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ VISION ═══════════════════════════════ -->
+  <section id="vision">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <p class="section-label">Our Direction</p>
+          <h2 class="section-title white">Redefining Excellence<br>in <em>Every Single Bag</em></h2>
+          <div class="section-divider"></div>
+          <p style="color:rgba(255,255,255,.6);line-height:1.8;font-size:.97rem;">
+            Our vision is to become a global leader in the plastic industry by setting new benchmarks for quality and
+            precision — revolutionizing the market through continuous integration of advanced technology.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+          <div class="vision-card">
+            <div class="vision-num">01</div>
+            <h5>Global Leadership in Packaging</h5>
+            <p>Becoming a leading name in the international plastic industry by setting new benchmarks for quality and
+              innovation.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+          <div class="vision-card">
+            <div class="vision-num">02</div>
+            <h5>Technological Excellence</h5>
+            <p>Continuously evolving by adopting the world's most advanced cutting and high-speed printing technologies.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+          <div class="vision-card">
+            <div class="vision-num">03</div>
+            <h5>Sustainable Manufacturing</h5>
+            <p>Pioneering eco-friendly production methods and high-quality recyclable materials that protect both
+              product and planet.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-4">
+          <div class="vision-card">
+            <div class="vision-num">04</div>
+            <h5>Ultimate Brand Partnership</h5>
+            <p>Recognized as the most trusted partner for businesses, turning every package into a symbol of brand
+              excellence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <p class="section-label">What We Offer</p>
+          <h2 class="section-title">Premium Cutting, Printing<br>& <em>Manufacturing</em></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="col-lg-5 offset-lg-1 reveal reveal-delay-2 d-flex align-items-end">
+          <p style="color:#5a6b7d;line-height:1.8;font-size:.95rem;">
+            Equipment note: Side Seal and Bottom Cutting machines + high-speed Flexo Printing for clean finishes and
+            bold, consistent brand colors.
+          </p>
+        </div>
+      </div>
+
+      <div class="row align-items-center mb-5 reveal">
+        <div class="col-12">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center;">
+            <div class="service-card" style="padding:18px 22px;border:1px solid rgba(13,34,64,.12);max-width:240px;">
+              <div class="service-hex" style="margin-bottom:10px;width:54px;height:54px;"><i class="bi bi-flower1"></i>
+              </div>
+              <h5 style="margin:0 0 6px;font-size:1rem;">Extrusion</h5>
+              <p style="margin:0;color:#5a6b7d;font-size:.86rem;line-height:1.6;">Film manufacturing</p>
+            </div>
+            <div
+              style="color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:1;transform:translateY(-6px);">
+              →</div>
+            <div class="service-card" style="padding:18px 22px;border:1px solid rgba(13,34,64,.12);max-width:240px;">
+              <div class="service-hex" style="margin-bottom:10px;width:54px;height:54px;"><i
+                  class="bi bi-printer-fill"></i></div>
+              <h5 style="margin:0 0 6px;font-size:1rem;">Printing</h5>
+              <p style="margin:0;color:#5a6b7d;font-size:.86rem;line-height:1.6;">High-definition flexo</p>
+            </div>
+            <div
+              style="color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:1;transform:translateY(-6px);">
+              →</div>
+            <div class="service-card" style="padding:18px 22px;border:1px solid rgba(13,34,64,.12);max-width:240px;">
+              <div class="service-hex" style="margin-bottom:10px;width:54px;height:54px;"><i class="bi bi-scissors"></i>
+              </div>
+              <h5 style="margin:0 0 6px;font-size:1rem;">Cutting</h5>
+              <p style="margin:0;color:#5a6b7d;font-size:.86rem;line-height:1.6;">Precision shapes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+          <div class="service-card">
+            <div class="service-hex"><i class="bi bi-gear-wide-connected"></i></div>
+            <h5>Custom Plastic Extrusion</h5>
+            <p>Manufactured film grades designed for consistent thickness, clarity, and strength—tailored to your
+              packaging requirements.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+          <div class="service-card">
+            <div class="service-hex"><i class="bi bi-printer-fill"></i></div>
+            <h5>High-Definition Flexo Printing</h5>
+            <p>Vibrant custom designs with sharp color accuracy and crisp details—built for reliable, repeatable
+              branding at scale.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+          <div class="service-card">
+            <div class="service-hex"><i class="bi bi-scissors"></i></div>
+            <h5>Precision Industrial Cutting</h5>
+            <p>Side Seal and Bottom Cutting to create clean, durable bag formats—engineered for strength, stability, and
+              smooth handling.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal reveal-delay-4">
+          <div class="service-card">
+            <div class="service-hex"><i class="bi bi-hand-index-thumb"></i></div>
+            <h5>Tailored Textile Solutions</h5>
+            <p>Packaging options designed to protect garments while supporting premium presentation—tailored by material
+              grade and printing needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ MATERIALS ═══════════════════════════════ -->
+  <section id="materials">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <p class="section-label">Material Used</p>
+          <h2 class="section-title">High-Performance<br><em>Film Grades</em></h2>
+          <div class="section-divider"></div>
+          <p style="color:#5a6b7d;line-height:1.8;">We source and process only top-grade raw materials from trusted
+            suppliers to guarantee superior output across every product line.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+          <div class="mat-card">
+            <h4>LDPE</h4>
+            <span class="mat-tag">Flexible LDPE Film</span>
+            <ul>
+              <li>Flexible, high-clarity film with excellent tear resistance.</li>
+              <li>Moisture protection to help keep contents clean and well-preserved.</li>
+              <li>Reliable performance for everyday industrial and textile packaging.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+          <div class="mat-card">
+            <h4>PP</h4>
+            <span class="mat-tag">High-Strength PP Film</span>
+            <ul>
+              <li>High-clarity, high-strength glossy finish for premium presentation.</li>
+              <li>Heat resistant performance for consistent packaging stability.</li>
+              <li>Ideal for packaging applications requiring a firm, premium feel.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+          <div class="mat-card">
+            <h4>BOPP</h4>
+            <span class="mat-tag">BOPP Biaxial Film</span>
+            <ul>
+              <li>Biaxially oriented for maximum strength and long-lasting durability.</li>
+              <li>Glass-like clarity that helps colors look vivid and true.</li>
+              <li>Water vapor barrier protection for dependable shelf and transit performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CLIENTS ═══════════════════════════════ -->
+  <section id="clients">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center reveal">
+          <p class="section-label">Trusted By</p>
+          <h2 class="section-title white" style="text-align:center;">Building Strong Ties with<br><em>Global
+              Industries</em></h2>
+          <div class="section-divider mx-auto"></div>
+          <p style="color:rgba(255,255,255,.55);max-width:550px;margin:0 auto;line-height:1.8;font-size:.95rem;">
+            Al Aziz Packages proudly supplies specialized packaging solutions to leading names across the textile and
+            industrial sectors of Pakistan.
+          </p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="clients-grid">
+          <div class="client-cell"><span>INTERLOOP</span></div>
+          <div class="client-cell"><span>AZGARD-9</span></div>
+          <div class="client-cell"><span>MAHMOOD GROUP</span></div>
+          <div class="client-cell"><span>STYLERS</span></div>
+          <div class="client-cell"><span>INDUS PLUS (PVT) LTD</span></div>
+          <div class="client-cell"><span>TAIGA</span></div>
+          <div class="client-cell"><span>MASTER TEXTILE</span></div>
+          <div class="client-cell"><span>SAPPHIRE</span></div>
+          <div class="client-cell"><span>NISHAT MILLS LTD</span></div>
+          <div class="client-cell"><span>OMBRE APPAREL PARK</span></div>
+          <div class="client-cell"><span>GHAURI TYRES</span></div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-8 offset-lg-2 text-center reveal">
+          <p style="color:rgba(255,255,255,.55);line-height:1.8;font-size:.93rem;">
+            We provide specialized packaging for the textile industry using BHT-free materials. Our precision cutting
+            and custom printing help protect garments from moisture, dust, and transit damage—while keeping your
+            branding sharp and consistent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CERTIFICATIONS ═══════════════════════════════ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <p class="section-label">Compliance &amp; Quality</p>
+          <h2 class="section-title">Committed to Certified<br><em>Manufacturing Excellence</em></h2>
+          <div class="section-divider"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal reveal-delay-1">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+            <h6>PVC-Free Certification (TTI)</h6>
+            <p>Independently verified to be free from PVC materials, supporting safer packaging for end users.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-2">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-globe2"></i></div>
+            <h6>Scope Certificate GRS &amp; RCS (USB Certification / Global Recycled Standard)</h6>
+            <p>Certification confirming responsible sourcing and recycled content under the Global Recycled Standard.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-3">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-recycle"></i></div>
+            <h6>Oxo-Biodegradable &amp; Biodegradable</h6>
+            <p>Options available for oxo-biodegradable and fully biodegradable performance—helping reduce long-term
+              environmental impact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center reveal">
+          <p class="section-label">Get In Touch</p>
+          <h2 class="section-title white" style="text-align:center;">Let Us Handle Your<br><em>Packaging Needs</em></h2>
+          <div class="section-divider mx-auto"></div>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="row g-4 mb-5 justify-content-center">
+        <div class="col-6 col-md-3 reveal reveal-delay-1">
+          <div class="team-card">
+            <div class="team-img-wrap"><i class="bi bi-person-fill"></i></div>
+            <div class="team-name">Khalid Aziz</div>
+            <div class="team-role">CEO</div>
+            <div class="team-contact">
+              <a href="tel:+923344332892">+92 334 4332892</a>
+              <a href="tel:+923039064942">+92 303 9064942</a>
+              <a href="mailto:Khalidaziz1981@gmail.com">Khalidaziz1981@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal reveal-delay-2">
+          <div class="team-card">
+            <div class="team-img-wrap"><i class="bi bi-person-fill"></i></div>
+            <div class="team-name">Asrar Meeran</div>
+            <div class="team-role">Sales Manager</div>
+            <div class="team-contact">
+              <a href="tel:+923024142898">+92 302 4142898</a>
+              <a href="tel:+923097500898">+92 309 7500898</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal reveal-delay-3">
+          <div class="team-card">
+            <div class="team-img-wrap"><i class="bi bi-person-fill"></i></div>
+            <div class="team-name">Sharjeel Malik</div>
+            <div class="team-role">Production Manager</div>
+            <div class="team-contact">
+              <a href="tel:+923049357162">+92 304 9357162</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal reveal-delay-4">
+          <div class="team-card">
+            <div class="team-img-wrap"><i class="bi bi-person-fill"></i></div>
+            <div class="team-name">Humayun Ramzan</div>
+            <div class="team-role">Account Manager</div>
+            <div class="team-contact">
+              <a href="tel:+923052798738">+92 305 2798738</a>
+              <a href="tel:+923472598738">+92 347 2598738</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Address & Web -->
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-8 reveal">
+          <div class="contact-block">
+            <h5>Office Information</h5>
+            <div class="cinfo">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Ali Hussain Abad, Maraka, 25 Km Multan Road, Lahore.</span>
+            </div>
+            <div class="cinfo">
+              <i class="bi bi-globe"></i>
+              <span><a href="http://www.alazizpackages.com" style="color:var(--gold);text-decoration:none;"
+                  target="_blank">www.alazizpackages.com</a></span>
+            </div>
+            <div class="cinfo">
+              <i class="bi bi-envelope-fill"></i>
+              <span><a href="mailto:Khalidaziz1981@gmail.com"
+                  style="color:rgba(255,255,255,.7);text-decoration:none;">Khalidaziz1981@gmail.com</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <p>© 2025 <span>Al Aziz Packages</span>. All rights reserved. &nbsp;·&nbsp; Ali Hussain Abad, Multan Road, Lahore
+        &nbsp;·&nbsp; <a href="http://www.alazizpackages.com"
+          style="color:var(--gold);text-decoration:none;">alazizpackages.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <div id="back-top"><i class="bi bi-chevron-up"></i></div>
+
+  <!-- Bootstrap JS + jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(function () {
+
+      // ── Navbar scroll ──
+      $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 60) {
+          $('#navbar').addClass('scrolled');
+        } else {
+          $('#navbar').removeClass('scrolled');
+        }
+        // back to top
+        if ($(this).scrollTop() > 400) {
+          $('#back-top').addClass('show');
+        } else {
+          $('#back-top').removeClass('show');
+        }
+      });
+
+      // ── Back to top ──
+      $('#back-top').on('click', function () {
+        $('html,body').animate({ scrollTop: 0 }, 500);
+      });
+
+      // ── Active nav link on scroll ──
+      $(window).on('scroll', function () {
+        var scrollPos = $(this).scrollTop() + 100;
+        $('section[id]').each(function () {
+          var top = $(this).offset().top;
+          var bottom = top + $(this).outerHeight();
+          var id = $(this).attr('id');
+          if (scrollPos >= top && scrollPos < bottom) {
+            $('.nav-link').removeClass('active');
+            $('.nav-link[href="#' + id + '"]').addClass('active');
+          }
+        });
+      });
+
+      // ── Smooth scroll for nav links ──
+      $('.nav-link[href^="#"]').on('click', function (e) {
+        var target = $($(this).attr('href'));
+        if (target.length) {
+          e.preventDefault();
+          $('html,body').animate({ scrollTop: target.offset().top - 70 }, 650);
+          // close mobile menu
+          $('#navMenu').collapse('hide');
+        }
+      });
+
+      // ── Reveal on scroll ──
+      function checkReveal() {
+        var wBottom = $(window).scrollTop() + $(window).height();
+        $('.reveal').each(function () {
+          if ($(this).offset().top < wBottom - 60) {
+            $(this).addClass('visible');
+          }
+        });
+      }
+      checkReveal();
+      $(window).on('scroll', checkReveal);
+
+    });
+  </script>
+</body>
+
+</html>

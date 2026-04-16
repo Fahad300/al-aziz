@@ -1,0 +1,122 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #fff;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scrolled {
+  box-shadow: 0 16px 40px rgba(7, 30, 56, 0.16);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5rem;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  color: var(--color-white);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand small {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.7rem;
+  margin-top: 0.1rem;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--color-accent), #f4c94c);
+  color: var(--color-primary);
+  font-weight: 800;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.nav a {
+  color: #333;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--color-blue);
+}
+
+.toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0.25rem;
+}
+
+.toggle span {
+  display: block;
+  width: 1.45rem;
+  height: 2px;
+  margin: 0.25rem 0;
+  background: var(--color-white);
+}
+
+@media (max-width: 900px) {
+  .toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 0;
+    padding: 1rem 1.5rem 1.5rem;
+    background: rgba(7, 30, 56, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .nav a {
+    padding: 0.75rem 0;
+  }
+
+  .open {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

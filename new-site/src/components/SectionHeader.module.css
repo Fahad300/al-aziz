@@ -1,0 +1,42 @@
+.wrapper {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 44rem;
+}
+
+.center {
+  justify-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  margin: 0;
+  color: var(--color-muted);
+  max-width: 38rem;
+}
+
+.light .title,
+.light .description {
+  color: var(--color-white);
+}
+
+.light .description {
+  color: rgba(255, 255, 255, 0.8);
+}
